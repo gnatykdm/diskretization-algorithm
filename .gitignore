@@ -1,0 +1,15 @@
+# Python virtual environment
+venv/
+Scripts/
+Include/
+Lib/
+[12
+25.1.1
+pyvenv.cfg
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.env
+*.env.*
+*.DS_Store
