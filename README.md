@@ -1,26 +1,26 @@
-# 🌟 Algorytm Dyskretyzacji Atrybutu Ciągłego
+# 🌟 Continuous Attribute Discretization Algorithm
 
-Implementacja **algorytmu dyskretyzacji zstępującej z kryterium zachłannym**, który maksymalizuje liczbę par obiektów o różnych etykietach (klasach) rozdzielonych przez podział.
-
----
-
-## 🚀 Jak to działa?
-
-Algorytm wykonuje następujące kroki:
-
-1. **Wczytanie danych**: Plik CSV z danymi wejściowymi.
-2. **Analiza atrybutu ciągłego**:
-    - Generowanie wszystkich możliwych punktów podziału (średnich między unikalnymi wartościami).
-    - Obliczanie liczby par obiektów z różnych klas, które zostają odseparowane dla każdego punktu.
-    - Wybór punktu z maksymalnym "zyskiem" separacyjnym.
-3. **Rekurencja**: Powtarzanie procesu w podprzedziałach, aż osiągnięta zostanie zadana liczba przedziałów (`n_bins`).
-4. **Zapis wyniku**: Tworzenie nowego pliku CSV z dyskretyzowanymi wartościami.
+Implementation of a **top-down discretization algorithm with a greedy criterion**, which maximizes the number of object pairs with different labels (classes) separated by the split.
 
 ---
 
-## 🧪 Przykład
+## 🚀 How does it work?
 
-### Wejściowy plik CSV (`test_data_large.csv`):
+The algorithm performs the following steps:
+
+1. **Data loading**: Input CSV file.
+2. **Continuous attribute analysis**:
+    - Generate all possible split points (averages between unique values).
+    - Calculate the number of object pairs from different classes that are separated for each split point.
+    - Select the split point with the maximum "separation gain."
+3. **Recursion**: Repeat the process in subintervals until the desired number of intervals (`n_bins`) is reached.
+4. **Save the result**: Create a new CSV file with discretized values.
+
+---
+
+## 🧪 Example
+
+### Input CSV file (`test_data_large.csv`):
 
 ```csv
 distance,label
@@ -29,13 +29,13 @@ distance,label
 ...
 ```
 
-### Uruchomienie algorytmu (dla 3 przedziałów):
+### Running the algorithm (for 3 intervals):
 
 ```bash
 python main.py
 ```
 
-### Wynik w terminalu:
+### Terminal output:
 
 ```
 2025-05-03 15:52:44 - INFO - Selected split 3.95 with gain 12
@@ -43,37 +43,37 @@ python main.py
 ...
 ```
 
-### Wyjściowy plik CSV: `diskretized_test_data.csv`
+### Output CSV file: `diskretized_test_data.csv`
 
 ---
 
-## 🛠️ Struktura projektu
+## 🛠️ Project structure
 
 ```
-📂 Projekt
-├── main.py                   # Główny plik uruchamiający algorytm
-├── utils.py                  # Funkcje pomocnicze: logowanie, I/O, mierzenie czasu
-├── test_data.csv             # Przykładowy mały zestaw danych
-├── test_data_large.csv       # Wygenerowany większy zbiór danych do testów
-├── diskretized_test_data.csv # Wynik działania algorytmu
+📂 Project
+├── main.py                   # Main file to run the algorithm
+├── utils.py                  # Helper functions: logging, I/O, timing
+├── test_data.csv             # Example small dataset
+├── test_data_large.csv       # Generated larger dataset for testing
+├── diskretized_test_data.csv # Algorithm output
 ```
 
 ---
 
-## ⚙️ Jak używać?
+## ⚙️ How to use?
 
-1. Umieść swój plik CSV w folderze projektu.
-2. Upewnij się, że kolumny `distance` i `label` istnieją (lub dostosuj swoje w kodzie `main.py`).
-3. Uruchom algorytm:
+1. Place your CSV file in the project folder.
+2. Ensure the `distance` and `label` columns exist (or adjust them in `main.py`).
+3. Run the algorithm:
 
     ```bash
     python main.py
     ```
 
-4. Możesz zmienić liczbę przedziałów (`n_bins`) w funkcji `discretization_alg()`.
+4. You can change the number of intervals (`n_bins`) in the `discretization_alg()` function.
 
 ---
 
-## 📄 Licencja
+## 📄 License
 
-Projekt stworzony do celów edukacyjnych. Możesz go dowolnie modyfikować i używać. 🌱
+Project created for educational purposes. You are free to modify and use it. 🌱
