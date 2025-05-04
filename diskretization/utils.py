@@ -49,5 +49,5 @@ def load_df_to_csv(df: pd.DataFrame, csv_name: str) -> None:
         logger.error("DataFrame is empty or CSV name is NULL.")
         return
 
-    df.to_csv(csv_name, index=False)
+    df.to_csv(csv_name, index=False, encoding="utf-8-sig")
     logger.info(f"DataFrame successfully saved to '{csv_name}'.")
